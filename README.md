@@ -20,6 +20,7 @@ Step to run:
      iii) (UDP attack): h1 timeout 20s hping3 -2 -V -d 120 -w 64 --rand-source --flood 10.0.0.4
 
 Description of files:
+
   controller.py: the controller file send flow and stat request every 10s and analysis the data received from the flow stats. It sends the data to pre-trained                       Random Forest model and predicts whether this batch of traffic is malicious or not. If it's malicious it blocks those ip of fixed amount of time.
 
   switch.py: This is a base file which is inherited by the controller file. This file adds flow rules to datapath if a new packet comes to the controller.
